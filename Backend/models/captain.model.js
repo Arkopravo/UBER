@@ -52,7 +52,7 @@ const captainSchema = new mongoose.Schema({
             required: true,
             min: [1, 'Capacity must be atleast 1'],
         },
-        vehicelType: {
+        vehicleType: {
             type: String,
             required: true,
             enum: ['car', 'motorcycle', 'auto']
@@ -79,7 +79,7 @@ captainSchema.methods.comparePassword = async function (password) {
     return await bcrypt.compare(password, this.password);
 };
 
-captainSchema.statics.hashpassword = async function (password) {
+captainSchema.statics.hashPassword = async function (password) {
     return await bcrypt.hash(password, 10);
 };
 
