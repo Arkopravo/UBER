@@ -12,7 +12,7 @@ connectToDb();
 
 app.use(cors());   // cross origin resource supply
 app.use(express.json());
-app.use(express.urlencoded({required: true}));
+app.use(express.urlencoded({extended: true}));
 app.use(cookieParser());
 
 
